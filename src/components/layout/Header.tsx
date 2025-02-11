@@ -1,20 +1,8 @@
-import React, { useState } from "react";
-import {
-  Calculator,
-  BookOpen,
-  PenSquare,
-  Syringe,
-  Stethoscope,
-  Heart,
-  FileText,
-} from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import React from "react";
+import { BookOpen, Stethoscope, Syringe, FileText, Heart } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 interface HeaderProps {
-  onCalculatorOpen?: () => void;
-  onNotesOpen?: () => void;
   onSectionChange?: (section: string) => void;
 }
 
@@ -51,11 +39,7 @@ const navigationItems = [
   },
 ];
 
-const Header = ({
-  onCalculatorOpen = () => {},
-  onNotesOpen = () => {},
-  onSectionChange = () => {},
-}: HeaderProps) => {
+const Header = ({ onSectionChange = () => {} }: HeaderProps) => {
   return (
     <header className="w-full bg-white border-b border-gray-200 px-6 py-3">
       <div className="flex items-center justify-between gap-4 flex-wrap">
